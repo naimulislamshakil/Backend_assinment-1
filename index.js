@@ -6,6 +6,7 @@ require('dotenv').config();
 
 // router import
 const hellowRoute = require('./router/v1/hellow.route');
+const userRoute = require('./router/v1/user.route');
 
 // add meddileware
 app.use(cors());
@@ -13,6 +14,7 @@ app.use(express.json());
 
 // create a route
 app.use('/', hellowRoute);
+app.use('/user', userRoute.allUser);
 
 // page Not found
 app.use('*', (req, res) => {
